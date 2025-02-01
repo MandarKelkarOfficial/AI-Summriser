@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "../logo.svg";
 import Form from "./Form";
-import SummarizedText from "./SummarizedText";
+// import SummarizedText from "./SummarizedText";
+// import summary from "./SummarizedText"
 
 export default function Landing() {
   return (
@@ -12,17 +13,17 @@ export default function Landing() {
           <div className="text-xl font-medium text-black dark:text-white ">
             HELLO
           </div>
-          <p className="text-gray-500 dark:text-gray-400 text-center">Welcome to the app</p>
+          <p className="text-gray-500 dark:text-gray-400 text-center">
+            Welcome to the app
+          </p>
         </div>
       </div>
       <hr className="border-white justify-content-center mt-5 m-5" />
       <div className="form d-flex justify-content-center align-items-center">
-<Form/>
+        <Form />
       </div>
       <hr className="border-white justify-content-center mt-5 m-5" />
-      <div className="form d-flex justify-content-center align-items-center">
-<SummarizedText/>
-      </div>
+
     </div>
   );
 }
