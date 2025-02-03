@@ -30,14 +30,14 @@ def summarize():
     try:
         file_content = uploaded_file.read().decode('utf-8', errors='ignore')
         print(file_content)
-        print("✅ File content read successfully")
+        print(" File content read successfully")
         
         # Initialize and generate summary
         response = model.generate_content(file_content)
         
         # Get the summary directly from the response
         summary = response.text  # Fixed: no parentheses
-        print("✅ Summary genrated successfully")
+        print(" Summary genrated successfully")
         
         # Check if the summary is empty or None
         if not summary:
@@ -46,7 +46,7 @@ def summarize():
         return jsonify({"summary": summary})
 
     except Exception as e:
-        print(f"❌ Error: {str(e)}")
+        print(f" Error: {str(e)}")
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
