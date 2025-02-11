@@ -31,9 +31,16 @@ def summarize():
         file_content = uploaded_file.read().decode('utf-8', errors='ignore')
         print(file_content)
         print(" File content read successfully")
+        prompt = f"""
+        Please provide a concise and informative summary of the following text, focusing on the key points and main arguments.  Aim for a summary that is about 200-250 words long and captures the essence of the original document.  Maintain the original tone and avoid adding any personal opinions or interpretations.  If the text is code, summarize the functionality and purpose of the code.
+
+        ```
+        {file_content}
+        ```
+        """
         
         # Initialize and generate summary
-        response = model.generate_content(file_content)
+        response = model.generate_content(prompt)
         
         # Get the summary directly from the response
         summary = response.text  # Fixed: no parentheses
